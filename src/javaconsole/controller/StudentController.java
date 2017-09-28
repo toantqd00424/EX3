@@ -25,6 +25,7 @@ public class StudentController {
             System.out.println(" ID :" + student.getId()
                     + ",\n Name : " + student.getName()
                     + ",\n Brithday : " + student.getBrithday()
+                    + "\nPhone : " + student.getPhone()
                     + ",\n Email : " + student.getEmail()
                     + ",\n ClassNumber : " + student.getClassNumber()
                     + ".\n  ========>>>>>||<<<<<=========");
@@ -41,16 +42,19 @@ public class StudentController {
         String name = scanner.nextLine();
         System.out.println("Mời nhập ngày tháng năm sinh : ");
         String brithday = scanner.nextLine();
+        System.out.println("Moi nhap SDT sinh vien : ");
+        String phone = scanner.nextLine();
         System.out.println("Mời nhập email sinh viên : ");
         String email = scanner.nextLine();
         System.out.println("Mời nhập tên lớp của sinh viên : ");
         String classnumber = scanner.nextLine();
 
-        System.out.println("Name : " + name + ", Brithday : " + brithday + ", Email : " + email + ", ClassName : " + classnumber);
+        System.out.println("Name : " + name + ", Brithday : " + brithday + ", Phone : "  + phone + ", Email : " + email + ", ClassName : " + classnumber);
 
         Student student = new Student();
         student.setName(name);
         student.setBrithday(brithday);
+        student.setPhone(phone);
         student.setEmail(email);
         student.setClassNumber(classnumber);
 
@@ -78,6 +82,7 @@ public class StudentController {
                     + "\nID : " + student.getId() 
                     + "\nName : " + student.getName()
                     + "\nBrithday : " + student.getBrithday()
+                    + "\nPhone : " + student.getPhone()
                     + "\nEmail : " + student.getEmail()
                     + "\nClassNuber : " + student.getClassNumber());
             System.out.println("=======>Mời nhập thông tin mới của sinh viên<=======");
@@ -87,17 +92,20 @@ public class StudentController {
             String name = scanner.nextLine();
             System.out.println("Mời nhập ngày tháng năm sinh : ");
             String brithday = scanner.nextLine();
+            System.out.println("Moi nhap SDT sinh vien : ");
+            String phone = scanner.nextLine();
             System.out.println("Mời nhập email sinh viên : ");
             String email = scanner.nextLine();
             System.out.println("Mời nhập tên lớp của sinh viên : ");
             String classnumber = scanner.nextLine();
             System.out.println("Thông tin sv sau khi sửa : ");
-            System.out.println("Name : " + name + ", Brithday : " + brithday + ", Email : " + email + ", ClassName : " + classnumber);
+            System.out.println("Name : " + name + ", Brithday : " + brithday + "Phone: " + phone + ", Email : " + email + ", ClassName : " + classnumber);
             
             Student student1 = new Student(); 
             student1.setId(id);
             student1.setName(name);
             student1.setBrithday(brithday);
+            student.setPhone(phone);
             student1.setEmail(email);
             student1.setClassNumber(classnumber);
             studentModel.update(student1);
@@ -129,6 +137,7 @@ public class StudentController {
                     + "\nID : " + student.getId() 
                     + "\nName : " + student.getName()
                     + "\nBrithday : " + student.getBrithday()
+                    + "\nPhone :" + student.getPhone()
                     + "\nEmail : " + student.getEmail()
                     + "\nClassNuber : " + student.getClassNumber());
             studentModel.delete(student);

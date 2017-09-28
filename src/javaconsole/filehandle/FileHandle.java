@@ -39,6 +39,8 @@ public class FileHandle {
                 bw.newLine();
                 bw.write(student.getBrithday());
                 bw.newLine();
+                bw.write(student.getPhone());
+                bw.newLine();
                 bw.write(student.getEmail());
                 bw.newLine();
                 bw.write(student.getClassNumber());

@@ -23,12 +23,13 @@ public class StudentModel {
         try {
             Connection cnn = DAO.getConnection();
             PreparedStatement preStt = cnn.prepareStatement("INSERT INTO dssv"
-                    + " (name, birthday, email, class_name) "
-                    + "VALUES (?, ?, ?, ?)");
+                    + " (name, birthday, phone, email, class_name) "
+                    + "VALUES (?, ?, ?, ?, ?)");
             preStt.setString(1, student.getName());
             preStt.setString(2, student.getBrithday());
-            preStt.setString(3, student.getEmail());
-            preStt.setString(4, student.getClassNumber());
+            preStt.setString(3, student.getPhone());
+            preStt.setString(4, student.getEmail());
+            preStt.setString(5, student.getClassNumber());
             preStt.execute();
         } catch (SQLException e) {
             System.err.println("Loi" + e.getMessage());
@@ -45,6 +46,7 @@ public class StudentModel {
                 student.setId(rs.getInt("id"));
                 student.setName(rs.getString("name"));
                 student.setBrithday(rs.getString("birthday"));
+                student.setPhone(rs.getString("phone"));
                 student.setEmail(rs.getString("email"));
                 student.setClassNumber(rs.getString("class_name"));
 
@@ -69,6 +71,7 @@ public class StudentModel {
                 student.setId(rs.getInt("id"));
                 student.setName(rs.getString("name"));
                 student.setBrithday(rs.getString("birthday"));
+                student.setPhone(rs.getString("phone"));
                 student.setEmail(rs.getString("email"));
                 student.setClassNumber(rs.getString("class_name"));
                 return student;
@@ -87,9 +90,10 @@ public class StudentModel {
             PreparedStatement preStt = cnn.prepareStatement("UPDATE dssv SET name = ?, birthday = ?, email = ?, class_name = ? WHERE id = ?");
             preStt.setString(1, student.getName());
             preStt.setString(2, student.getBrithday());
-            preStt.setString(3, student.getEmail());
-            preStt.setString(4, student.getClassNumber());
-            preStt.setInt(5, student.getId());
+            preStt.setString(3, student.getPhone());
+            preStt.setString(4, student.getEmail());
+            preStt.setString(5, student.getClassNumber());
+            preStt.setInt(6, student.getId());
             preStt.execute();
         } catch (SQLException e) {
             System.err.println("Loi lenh databe" + e.getMessage());

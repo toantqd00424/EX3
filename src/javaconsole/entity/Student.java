@@ -5,6 +5,8 @@
  */
 package javaconsole.entity;
 
+import javax.swing.JTextField;
+
 /**
  *
  * @author MSI
@@ -13,6 +15,7 @@ public class Student {
 
     private int id;
     private String name;
+    private String phone;
     private String email;
     private String brithday;
     private String classNumber;
@@ -20,6 +23,16 @@ public class Student {
     public Student() {
         
     }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+    
+    
 
     public int getId() {
         return id;
@@ -61,12 +74,17 @@ public class Student {
         this.classNumber = classNumber;
     }
 
-    public Student(int id, String name, String email, String brithday, String classNumber) {
+    public Student(int id, String name, String phone, String email, String brithday, String classNumber) {
         this.id = id;
         this.name = name;
+        this.phone = phone;
         this.email = email;
         this.brithday = brithday;
         this.classNumber = classNumber;
     }
+
+   
+
+   
 
 }

@@ -5,8 +5,11 @@
  */
 package javaconsole.controller;
 
+import java.text.ParseException;
 import java.util.Scanner;
+
 import javaconsole.filehandle.FileHandle;
+import swingtutorial.SubmitForm;
 
 /**
  *
@@ -14,12 +17,15 @@ import javaconsole.filehandle.FileHandle;
  */
 public class MenuConsole {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws ParseException {
         MenuConsole menu = new MenuConsole();
-        menu.createMenu();
+       
+            menu.createMenu();
+      
+        
     }
 
-    private void createMenu() {
+    private void createMenu() throws ParseException {
         while (true) {
             System.out.println("=================>Student Manage<====================");
             System.out.println("1. Student list");
@@ -44,6 +50,7 @@ public class MenuConsole {
                 System.err.println("Vui lòng nhập một chữ số ");
                 continue;
             }
+            SubmitForm sf = new SubmitForm();
             StudentController studentController = new StudentController();
             FileHandle fileHandle = new FileHandle();
             if (choice == 7) {
@@ -56,8 +63,9 @@ public class MenuConsole {
                         studentController.getList();
                         break;
                     case 2:
-                        System.out.println("MỜI NHẬP THÔNG TIN SINH VIÊN MỚI: ");
-                        studentController.addStudent();
+                        //System.out.println("MỜI NHẬP THÔNG TIN SINH VIÊN MỚI: ");
+                        //studentController.addStudent();
+                        sf.add(sf);
                         break;
                     case 3:
                         System.out.println("MỜI NHẬP ID SINH VIÊN CẦN SỬA : ");
