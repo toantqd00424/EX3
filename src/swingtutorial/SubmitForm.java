@@ -164,7 +164,7 @@ public class SubmitForm extends JFrame {
         this.btn1.setBackground(Color.decode("#3B5998"));
         this.btn1.setForeground(Color.WHITE);
         this.btn1.setBounds(710, 540, 90, 30);
-
+ 
         this.btn2 = new JButton("REGISTER");
         this.btn2.setBackground(Color.decode("#3B5998"));
         this.btn2.setForeground(Color.WHITE);
